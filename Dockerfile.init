@@ -2,7 +2,7 @@
 # Copyright 2026 Authors of KubeArmor
 
 
-FROM alpine:3.22 AS kubearmor-init
+FROM alpine:3.24 AS kubearmor-init
 
 RUN apk --no-cache update
 
