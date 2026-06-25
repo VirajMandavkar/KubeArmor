@@ -200,7 +200,7 @@ func (dh *DockerHandler) GetContainerInfo(containerID, nodeID string, OwnerInfo 
 		// finished at is IsZero until a container exits
 		timeFinished, err := time.Parse(time.RFC3339Nano, inspect.Container.State.FinishedAt)
 		if err == nil && !timeFinished.IsZero() && timeFinished.After(lastUpdatedAt) {
-			lastUpdatedAt = timeFinished
+			container.LastUpdatedAt = timeFinished.UTC().String()
 		}
 
 	}
